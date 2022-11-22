@@ -1,4 +1,4 @@
-package com.jamilly.bookstoremanager.entity;
+package com.darllen.bookstoremanager.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -34,7 +34,7 @@ public class Book {
     private String publisherName;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id") //qual coluna vai ser a FK para a tabela de Author
     private Author author;
 
 

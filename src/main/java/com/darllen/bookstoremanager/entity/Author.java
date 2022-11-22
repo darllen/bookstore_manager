@@ -1,4 +1,4 @@
-package com.jamilly.bookstoremanager.entity;
+package com.darllen.bookstoremanager.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
 public class Author {
 
     @Id
@@ -27,3 +26,5 @@ public class Author {
 
 
 }
+
+
