@@ -1,10 +1,11 @@
 package com.darllen.bookstoremanager.controller;
 
+import com.darllen.bookstoremanager.dto.BookDTO;
 import com.darllen.bookstoremanager.dto.MessageResponseDTO;
 import com.darllen.bookstoremanager.entity.Book;
-import com.darllen.bookstoremanager.repository.BookRepository;
-import com.darllen.bookstoremanager.sevice.BookService;
+import com.darllen.bookstoremanager.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +27,8 @@ public class BookController {
 
 
     @PostMapping // junto com oq vai ser passado na requisição, vão ser responsáveis por
-    public MessageResponseDTO create(@RequestBody Book book){
-        return bookService.create(book);
+    public MessageResponseDTO create(@RequestBody @Validated BookDTO bookDTO){
+        return bookService.create(bookDTO);
     }
 
 }
